@@ -1,0 +1,52 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">Shop.Admin1</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Anasayfa
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="category">
+                <span class="oi oi-plus" aria-hidden="true"></span> Kategori
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="products">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Ürünler
+            </NavLink>
+        </li>
+         <li class="nav-item px-3">
+            <NavLink class="nav-link" href="stock">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Stok
+            </NavLink>
+        </li>
+         <li class="nav-item px-3">
+            <NavLink class="nav-link" href="orders">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Siparişler
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="master">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Master
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

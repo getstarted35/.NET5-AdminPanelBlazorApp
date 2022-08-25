@@ -1,0 +1,7 @@
+﻿@inject NavigationManager Navigation
+
+@code {
+    [Parameter] public string Url { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync() => Navigation.NavigateTo("/login", true);
+}
